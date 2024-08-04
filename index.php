@@ -130,11 +130,6 @@ if (isset($_POST['submit'])) {
                         </div>
                     </div>
 
-
-
-
-
-
                 </div>
             </div>
 
@@ -169,7 +164,7 @@ if (isset($_POST['submit'])) {
 
             <div class="carousel-item active">
                 <img class="d-block w-100" src="assets/images/slider/himage.jpg" alt="Third slide">
-                <div class="carousel-cover"></div>
+                <!--<div class="carousel-cover"></div>-->
                 <div class="carousel-caption vdg-cur d-none d-md-block">
                     <h5 class="animated bounceInDown">Wellcome to MediHelp!</h5>
                     <p><b>MediHelp</b> is the most accredited hospital in the Sri Lankan healthcare sector. Since 2002,
