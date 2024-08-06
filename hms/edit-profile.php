@@ -66,6 +66,9 @@ if (isset($_POST['submit'])) {
 							<div class="col-sm-8">
 								<h1 class="mainTitle">User | Edit Profile</h1>
 							</div>
+					         <a href="dashboard.php"><button type="submit" name="backtodashboard" class="btn btn-o btn-primary">
+							Back to Dash Board
+						</button></a>
 							<ol class="breadcrumb">
 								<li>
 									<span>User </span>
@@ -146,17 +149,12 @@ if (isset($_POST['submit'])) {
 															</label>
 															<input type="email" name="uemail" class="form-control" readonly="readonly" value="<?php echo htmlentities($data['email']); ?>">
 															<a href="change-emaild.php">Update your email id</a>
-														</div>
-
-
-
-
-
-
+													</div>
 
 														<button type="submit" name="submit" class="btn btn-o btn-primary">
 															Update
 														</button>
+														
 													</form>
 												<?php } ?>
 											</div>

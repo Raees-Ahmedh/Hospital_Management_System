@@ -1,12 +1,4 @@
-/* =======================================================================
-Template Name: Dil Hospital
-Author:  SmartEye Adminpanel
-Author URI: www.smarteyeapps.com
-Version: 1.0
-coder name:Prabin Raja
-Description: This Template is created for web template
-======================================================================= */
-/* ===================================== Import Less ================================== */
+
 @font-face {
   font-family: 'mouse-300';
   src: url("../fonts/PT_Sans-Web-Regular.ttf") format("truetype"); }
@@ -254,7 +246,7 @@ header {
     .small-menu {
       margin-top: 11px; } }
 
-/* ===================================== Slide Style CSS ================================== */
+/* ===================================== Slide Style CSS ==================================
 .slider-detail {
   padding-top: 0px; }
   .slider-detail .carousel-cover {
@@ -316,6 +308,7 @@ header {
       .slider-detail .btn-default {
         padding: 5px;
         font-size: 13px; } }
+     */    
 
 /* ===================================== Key Features CSS ================================== */
 .key-features .kvxol {
@@ -329,7 +322,7 @@ header {
     background-color: #FFF;
     padding: 20px;
     font-size: 42px;
-    color: #00ab9f;
+    color: #83c0bc;
     margin-bottom: 30px;
     border-radius: 50px; }
   .key-features .single-key p {
@@ -528,4 +521,3 @@ header {
   .kf-2 .single-key {
     box-shadow: 0 2px 3px 0 rgba(218, 218, 253, 0.35), 0 0px 3px 0 rgba(206, 206, 238, 0.35); }
 
-/*# sourceMappingURL=style.css.map */

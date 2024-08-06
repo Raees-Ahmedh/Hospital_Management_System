@@ -48,7 +48,7 @@ $_SESSION['errmsg']="Invalid username or password";
 	</head>
 	<body class="login">
 		<div class="row">
-			<div class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+			<div class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-3 col-md-6 ">
 				<div class="logo margin-top-30">
 				<h2>Admin Login</h2>
 				</div>
@@ -84,9 +84,7 @@ $_SESSION['errmsg']="Invalid username or password";
 						</fieldset>
 					</form>
 
-					<div class="copyright">
-						<span class="text-bold text-uppercase">Hospital Management System</span>
-					</div>
+					
 			
 				</div>
 

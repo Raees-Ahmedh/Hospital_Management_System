@@ -74,7 +74,7 @@ if (isset($_POST['submit'])) {
 
 <body class="login">
 	<div class="row">
-		<div class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+		<div class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-3 col-md-6">
 			<div class="logo margin-top-30">
 				<a href="../index.php">
 					<h2> MediHelp | Patient Login</h2>
@@ -107,8 +107,9 @@ if (isset($_POST['submit'])) {
 						<div class="form-actions">
 
 							<button type="submit" class="btn btn-primary pull-right" name="submit">
-								Login <i class="fa fa-arrow-circle-right"></i>
+								Login 
 							</button>
+							<a href="../index.php">Bacto Home Page</a>
 						</div>
 						<div class="new-account">
 							Don't have an account yet?

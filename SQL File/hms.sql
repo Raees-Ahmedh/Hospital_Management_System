@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2024 at 11:18 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Aug 06, 2024 at 06:07 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -66,8 +66,11 @@ CREATE TABLE `appointment` (
 --
 
 INSERT INTO `appointment` (`id`, `doctorSpecialization`, `doctorId`, `userId`, `consultancyFees`, `appointmentDate`, `appointmentTime`, `postingDate`, `userStatus`, `doctorStatus`, `updationDate`) VALUES
-(1, 'ENT', 1, 1, 500, '2024-05-30', '9:15 AM', '2024-05-15 03:42:11', 1, 1, NULL),
-(2, 'Endocrinologists', 2, 2, 800, '2024-05-31', '2:45 PM', '2024-05-16 09:08:54', 1, 1, NULL);
+(1, 'ENT', 1, 1, 500, '2024-05-30', '9:15 AM', '2024-05-15 03:42:11', 1, 0, '2024-08-06 13:59:27'),
+(2, 'Endocrinologists', 2, 2, 800, '2024-05-31', '2:45 PM', '2024-05-16 09:08:54', 1, 1, NULL),
+(0, 'Dermatology', 0, 0, 800, '2024-08-14', '8:30 AM', '2024-08-04 02:53:50', 1, 1, NULL),
+(0, 'Internal Medicine', 0, 0, 500, '2024-08-06', '1:45 PM', '2024-08-04 08:04:29', 1, 1, NULL),
+(0, 'Orthopedics', 5, 1, 1200, '2024-08-30', '9:15 AM', '2024-08-06 15:32:47', 1, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -93,7 +96,7 @@ CREATE TABLE `doctors` (
 --
 
 INSERT INTO `doctors` (`id`, `specilization`, `doctorName`, `address`, `docFees`, `contactno`, `docEmail`, `password`, `creationDate`, `updationDate`) VALUES
-(1, 'ENT', 'Anuj kumar', 'A 123 XYZ Apartment Raj Nagar Ext Ghaziabad', '500', 142536250, 'anujk123@test.com', 'f925916e2754e5e03f75dd58a5733251', '2024-04-10 18:16:52', '2024-05-14 09:26:17'),
+(1, 'ENT', 'Dr Chandra Kumara', 'Genaral Hospital , Matara', '2500', 72918347, 'anujk123@test.com', 'f925916e2754e5e03f75dd58a5733251', '2024-04-10 18:16:52', '2024-08-06 15:30:51'),
 (2, 'Endocrinologists', 'Charu Dua', 'X 1212 ABC Apartment Laxmi Nagar New Delhi ', '800', 1231231230, 'charudua12@test.com', 'f925916e2754e5e03f75dd58a5733251', '2024-04-11 01:06:41', '2024-05-14 09:26:28'),
 (4, 'Pediatrics', 'Priyanka Sinha', 'A 123 Xyz Aparmtnent Ghaziabad', '700', 74561235, 'p12@t.com', 'f925916e2754e5e03f75dd58a5733251', '2024-05-16 09:12:23', NULL),
 (5, 'Orthopedics', 'Vipin Tayagi', 'Yasho Hospital New Delhi', '1200', 95214563210, 'vpint123@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2024-05-16 09:13:11', NULL),
@@ -122,7 +125,12 @@ CREATE TABLE `doctorslog` (
 
 INSERT INTO `doctorslog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`, `status`) VALUES
 (1, 1, 'anujk123@test.com', 0x3a3a3100000000000000000000000000, '2024-05-16 05:19:33', NULL, 1),
-(2, 1, 'anujk123@test.com', 0x3a3a3100000000000000000000000000, '2024-05-16 09:01:03', '16-05-2024 02:37:32 PM', 1);
+(2, 1, 'anujk123@test.com', 0x3a3a3100000000000000000000000000, '2024-05-16 09:01:03', '16-05-2024 02:37:32 PM', 1),
+(0, NULL, 'maheesha', 0x3a3a3100000000000000000000000000, '2024-08-04 05:07:04', NULL, 0),
+(0, 1, 'anujk123@test.com', 0x3a3a3100000000000000000000000000, '2024-08-06 13:44:02', NULL, 1),
+(0, 1, 'anujk123@test.com', 0x3a3a3100000000000000000000000000, '2024-08-06 13:53:46', NULL, 1),
+(0, 1, 'anujk123@test.com', 0x3a3a3100000000000000000000000000, '2024-08-06 13:58:31', NULL, 1),
+(0, 1, 'anujk123@test.com', 0x3a3a3100000000000000000000000000, '2024-08-06 15:29:42', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -182,7 +190,8 @@ CREATE TABLE `tblcontactus` (
 
 INSERT INTO `tblcontactus` (`id`, `fullname`, `email`, `contactno`, `message`, `PostingDate`, `AdminRemark`, `LastupdationDate`, `IsRead`) VALUES
 (1, 'Anuj kumar', 'anujk30@test.com', 1425362514, 'This is for testing purposes.   This is for testing purposes.This is for testing purposes.This is for testing purposes.This is for testing purposes.This is for testing purposes.This is for testing purposes.This is for testing purposes.This is for testing purposes.', '2024-04-20 16:52:03', NULL, '2024-05-14 09:27:15', NULL),
-(2, 'Anuj kumar', 'ak@gmail.com', 1111122233, 'This is for testing', '2024-04-23 13:13:41', 'Contact the patient', '2024-04-27 13:13:57', 1);
+(2, 'Anuj kumar', 'ak@gmail.com', 1111122233, 'This is for testing', '2024-04-23 13:13:41', 'Contact the patient', '2024-04-27 13:13:57', 1),
+(0, 'Maheesha nethmina', 'maheeshanethmina@gmail.com', 776626075, 'Good\r\n', '2024-08-04 04:59:42', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -283,7 +292,30 @@ CREATE TABLE `userlog` (
 
 INSERT INTO `userlog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`, `status`) VALUES
 (1, 1, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-05-15 03:41:48', NULL, 1),
-(2, 2, 'amitk@gmail.com', 0x3a3a3100000000000000000000000000, '2024-05-16 09:08:06', '16-05-2024 02:41:06 PM', 1);
+(2, 2, 'amitk@gmail.com', 0x3a3a3100000000000000000000000000, '2024-05-16 09:08:06', '16-05-2024 02:41:06 PM', 1),
+(0, 0, 'maheeshanethmina@gmail.com', 0x3a3a3100000000000000000000000000, '2024-08-04 02:52:18', '04-08-2024 01:44:46 PM', 1),
+(0, 0, 'maheeshanethmina@gmail.com', 0x3a3a3100000000000000000000000000, '2024-08-04 02:53:04', NULL, 1),
+(0, 0, 'maheeshanethmina@gmail.com', 0x3a3a3100000000000000000000000000, '2024-08-04 02:53:29', NULL, 1),
+(0, NULL, 'senithdakshina@gmail.com', 0x3a3a3100000000000000000000000000, '2024-08-04 07:51:07', NULL, 0),
+(0, NULL, 'admin@gmail.com', 0x3a3a3100000000000000000000000000, '2024-08-04 07:55:21', NULL, 0),
+(0, 0, 'maheesha@gmail.com', 0x3a3a3100000000000000000000000000, '2024-08-04 07:59:24', NULL, 1),
+(0, 0, 'maheesha@gmail.com', 0x3a3a3100000000000000000000000000, '2024-08-04 08:04:09', NULL, 1),
+(0, 0, 'ayesha@gmail.com', 0x3a3a3100000000000000000000000000, '2024-08-04 08:06:49', NULL, 1),
+(0, 0, 'ayesha@gmail.com', 0x3a3a3100000000000000000000000000, '2024-08-04 08:10:02', NULL, 1),
+(0, 0, 'ayesha@gmail.com', 0x3a3a3100000000000000000000000000, '2024-08-04 08:12:05', NULL, 1),
+(0, 0, 'ayesha@gmail.com', 0x3a3a3100000000000000000000000000, '2024-08-04 08:12:54', NULL, 1),
+(0, 0, 'ayesha@gmail.com', 0x3a3a3100000000000000000000000000, '2024-08-04 08:14:57', NULL, 1),
+(0, 1, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-08-06 14:18:37', NULL, 1),
+(0, 1, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-08-06 15:25:13', NULL, 1),
+(0, NULL, 'cst21022@std.uwu.ac.lk', 0x3a3a3100000000000000000000000000, '2024-08-06 15:26:42', NULL, 0),
+(0, NULL, 'cst21022@std.uwu.ac.lk', 0x3a3a3100000000000000000000000000, '2024-08-06 15:27:00', NULL, 0),
+(0, NULL, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-08-06 15:27:26', NULL, 0),
+(0, 1, 'cst21022@std.uwu.ac.lk', 0x3a3a3100000000000000000000000000, '2024-08-06 15:27:39', NULL, 1),
+(0, 1, 'cst21022@std.uwu.ac.lk', 0x3a3a3100000000000000000000000000, '2024-08-06 15:32:24', NULL, 1),
+(0, 1, 'cst21022@std.uwu.ac.lk', 0x3a3a3100000000000000000000000000, '2024-08-06 15:37:06', NULL, 1),
+(0, NULL, 'sachindu@gmail.com', 0x3a3a3100000000000000000000000000, '2024-08-06 15:54:31', NULL, 0),
+(0, 0, 'sachindu@gmail.com', 0x3a3a3100000000000000000000000000, '2024-08-06 15:54:49', NULL, 1),
+(0, 1, 'cst21022@std.uwu.ac.lk', 0x3a3a3100000000000000000000000000, '2024-08-06 16:03:21', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -308,8 +340,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `fullName`, `address`, `city`, `gender`, `email`, `password`, `regDate`, `updationDate`) VALUES
-(1, 'John Doe', 'A 123 ABC Apartment GZB 201017', 'Ghaziabad', 'male', 'johndoe12@test.com', 'f925916e2754e5e03f75dd58a5733251', '2024-04-20 12:13:56', '2024-05-14 09:28:15'),
-(2, 'Amit kumar', 'new Delhi india', 'New Delhi', 'male', 'amitk@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2024-04-21 13:15:32', '2024-05-14 09:28:23');
+(1, 'Maheesha Nethmina', 'Athmaga ,Gumunumawatha, Nakulugamuwa', 'Matara', 'male', 'cst21022@std.uwu.ac.lk', 'f925916e2754e5e03f75dd58a5733251', '2024-04-20 12:13:56', '2024-08-06 15:28:16'),
+(2, 'Amit kumar', 'new Delhi india', 'New Delhi', 'male', 'amitk@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2024-04-21 13:15:32', '2024-05-14 09:28:23'),
+(0, 'Maheesha nethmina', 'Athmaga ,Gemunumawatha,Nakulugamuwa', 'Tangalla', 'male', 'maheeshanethmina@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2024-08-04 02:51:49', NULL),
+(0, 'Maheesha nethmina', 'Athmaga ,Gemunumawatha,Nakulugamuwa', 'Tangalla', 'male', 'maheesha@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2024-08-04 07:59:04', NULL),
+(0, 'Ayesha Damayanthi', 'Athmaga ,Gemunumawatha,Nakulugamuwa', 'Tangalla', 'female', 'ayesha@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2024-08-04 08:06:33', NULL),
+(0, 'Sachindu Kavishka', 'No45, Migamuwa', 'Migamuwa', 'male', 'sachindu@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2024-08-06 15:54:03', NULL);
 
 --
 -- Indexes for dumped tables
@@ -320,137 +356,6 @@ INSERT INTO `users` (`id`, `fullName`, `address`, `city`, `gender`, `email`, `pa
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `appointment`
---
-ALTER TABLE `appointment`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `doctors`
---
-ALTER TABLE `doctors`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `doctorslog`
---
-ALTER TABLE `doctorslog`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `doctorspecilization`
---
-ALTER TABLE `doctorspecilization`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tblcontactus`
---
-ALTER TABLE `tblcontactus`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tblmedicalhistory`
---
-ALTER TABLE `tblmedicalhistory`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tblpage`
---
-ALTER TABLE `tblpage`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `tblpatient`
---
-ALTER TABLE `tblpatient`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `userlog`
---
-ALTER TABLE `userlog`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `email` (`email`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `appointment`
---
-ALTER TABLE `appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `doctors`
---
-ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `doctorslog`
---
-ALTER TABLE `doctorslog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `doctorspecilization`
---
-ALTER TABLE `doctorspecilization`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- AUTO_INCREMENT for table `tblcontactus`
---
-ALTER TABLE `tblcontactus`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `tblmedicalhistory`
---
-ALTER TABLE `tblmedicalhistory`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `tblpage`
---
-ALTER TABLE `tblpage`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `tblpatient`
---
-ALTER TABLE `tblpatient`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `userlog`
---
-ALTER TABLE `userlog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

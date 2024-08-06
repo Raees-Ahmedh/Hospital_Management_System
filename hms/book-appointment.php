@@ -91,6 +91,9 @@ if (isset($_POST['submit'])) {
 							<div class="col-sm-8">
 								<h1 class="mainTitle">User | Book Appointment</h1>
 							</div>
+							<a href="dashboard.php"><button type="submit" name="backtodashboard" class="btn btn-o btn-primary">
+							Back to Dash Board
+						</button></a>
 							<ol class="breadcrumb">
 								<li>
 									<span>User</span>

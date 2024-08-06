@@ -52,9 +52,9 @@ echo "<script>window.location.href='index.php'</script>";
 	</head>
 	<body class="login">
 		<div class="row">
-			<div class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+			<div class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-3 col-md-6 ">
 				<div class="logo margin-top-30">
-				<a href="../../index.php">	<h2> HMS | Doctor Login</h2></a>
+				<a href="../../index.php">	<h2> MediHelp | Doctor Login</h2></a>
 				</div>
 
 				<div class="box-login">
@@ -82,19 +82,18 @@ echo "<script>window.location.href='index.php'</script>";
 								</a>
 							</div>
 							<div class="form-actions">
-								
+							<a href="../../index.php">Back to home page</a>
 								<button type="submit" class="btn btn-primary pull-right" name="submit">
-									Login <i class="fa fa-arrow-circle-right"></i>
+									Login 
 								</button>
+								
 							</div>
 							
 						
 						</fieldset>
 					</form>
 
-					<div class="copyright">
-					<span class="text-bold text-uppercase"> Hospital Management System</span>
-					</div>
+					
 			
 				</div>
 
